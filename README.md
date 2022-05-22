@@ -130,6 +130,8 @@ yarn add react-firebase-hooks
 
 ## React Bootstrap
 
+**Note: I didn't use it for this project!**
+
 ### `Installation`
 
 The best way to consume React-Bootstrap is via the `npm` package which you can install with npm (or `yarn` if you prefer).
@@ -236,8 +238,6 @@ ReactDOM.hydrate(
   document.getElementById(‘app’)
 );
 ```
-
-**Note: I didn't use it for this project!**
 
 ## Tailwind CSS
 
@@ -407,6 +407,7 @@ module.exports = {
   //...
 };
 ```
+
 <!-- Project End -->
 
 ## Getting Started with Create React App
