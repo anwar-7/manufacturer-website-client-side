@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link to="/blogs">Blogs</Link>
       </li>
       <li>
-        <Link to="/review">Review</Link>
+        <Link to="/purchase">Purchase</Link>
       </li>
       <li>
         <Link to="/contact">Contact</Link>
@@ -43,6 +43,7 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         )}
       </li>
+      <li>{user && <span>{user?.displayName}</span>}</li>
     </>
   );
   return (

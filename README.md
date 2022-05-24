@@ -333,7 +333,7 @@ module.exports = {
 - `use`
 
 ```js
-<button class="btn w-64 rounded-full">Button</button>
+<button className="btn w-64 rounded-full">Button</button>
 ```
 
 ### `How to add a new custom theme?`
