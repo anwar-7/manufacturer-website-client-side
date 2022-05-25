@@ -87,7 +87,12 @@ const Purchase = () => {
     const price = userOrderQuantity?.price;
     const stock = userOrderQuantity?.stock;
     const img = userOrderQuantity?.img;
-    const quantity = parseInt(e.target.quantity.value);
+    // change
+    // const quantity = tool?.quantity;
+    // change
+    const payment = false;
+    // change
+    const orderQuantity = parseInt(e.target.quantity.value);
     const order = {
       email,
       displayName,
@@ -98,10 +103,14 @@ const Purchase = () => {
       price,
       stock,
       img,
-      quantity,
+      // change
+      // quantity,
+      payment,
+      orderQuantity,
     };
     console.log(order);
-    fetch('http://localhost:5000/tools', {
+    // change
+    fetch('http://localhost:5000/order', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -167,7 +176,7 @@ const Purchase = () => {
             <div className="card-body">
               <form onSubmit={formSubmit} className="form-control">
                 <label className="label">
-                  <span className="label-text">Minimum Order Quantity</span>
+                  <span className="label-text">Order Quantity</span>
                 </label>
                 <input
                   type="number"
