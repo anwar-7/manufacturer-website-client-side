@@ -30,9 +30,14 @@ const Navbar = () => {
         <Link to="/about">About</Link>
       </li>
       {user && (
-        <li>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
+        <>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/userReview">Review</Link>
+          </li>
+        </>
       )}
       <li>
         {user ? (

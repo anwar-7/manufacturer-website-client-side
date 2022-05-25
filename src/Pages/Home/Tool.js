@@ -17,8 +17,8 @@ const Tool = ({ tool }) => {
         <p>
           Price Per Unit: $<b>{price}</b>
         </p>
-        <p>Description: {description.slice(0, 200)}...</p>
-        <p>Ratings: ({tool?.ratings})</p>
+        <p>Description: {description?.slice(0, 200)}...</p>
+        <p>Ratings: ({ratings})</p>
         <p>
           Available Quantity: <b>{stock}</b> Unit
         </p>

@@ -2,11 +2,11 @@ import React from 'react';
 
 const Review = ({ review }) => {
   return (
-    <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+    <div className="card lg:max-w-lg bg-base-100 shadow-xl mt-5">
       <div className="card-body">
         <p>
           <b>Review: </b>
-          {review?.description?.slice(0, 150)}
+          {review?.description?.slice(0, 130)}...
         </p>
         <div className="flex items-center">
           <div className="avatar">

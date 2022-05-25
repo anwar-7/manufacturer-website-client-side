@@ -8,6 +8,7 @@ import SignUp from './Pages/Login/SignUp';
 import Navbar from './Pages/Shared/Navbar';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
+import UserReview from './Pages/Dashboard/UserReview';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
             // </RequireAuth>
           }
         />
+        {/* change */}
+        <Route path="userReview" element={<UserReview />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
       </Routes>

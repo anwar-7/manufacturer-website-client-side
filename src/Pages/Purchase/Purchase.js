@@ -147,15 +147,44 @@ const Purchase = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content grid grid-cols-1 lg:grid-cols-2 gap-5 p-5 justify-items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl font-bold">User Information</h1>
-            <p className="py-3 text-xl font-semibold">
+            <h1 className="text-4xl font-bold text-success">
+              User Information
+            </h1>
+            <p className="py-1 text-xl font-semibold">
               User Name: {user?.displayName}
             </p>
-            <p className="py-1 text-xl font-semibold">
+            <p className="py-1 pb-5 text-xl font-semibold">
               User Email: {user?.email}
             </p>
 
-            <h1 className="text-4xl font-bold">Product Details</h1>
+            <div class="collapse">
+              <input type="checkbox" />
+              <div class="collapse-title ">
+                <h1 className="text-4xl font-bold text-success">
+                  Product Details{' '}
+                  <span className="text-sm text-neutral">(Show/Hied)</span>
+                </h1>
+              </div>
+              <div class="collapse-content">
+                <p className="py-1 text-xl font-semibold">
+                  Price Per Unit: $<b>{userOrderQuantity?.price}</b>
+                </p>
+                <p className="py-1 text-xl">
+                  Description: {userOrderQuantity?.description}
+                </p>
+                <p className="py-1 text-xl font-semibold">
+                  Ratings: ({userOrderQuantity?.ratings})
+                </p>
+                <p className="py-1 text-xl font-semibold">
+                  Available Quantity: <b>{userOrderQuantity?.stock}</b> Unit
+                </p>
+                <p className="py-1 text-xl font-semibold">
+                  Minimum Order Quantity: <b>{tool?.quantity}</b> Unit
+                </p>
+              </div>
+            </div>
+
+            {/* <h1 className="text-4xl font-bold text-success">Product Details</h1>
             <p className="py-1 text-xl font-semibold">
               Price Per Unit: $<b>{userOrderQuantity?.price}</b>
             </p>
@@ -170,7 +199,7 @@ const Purchase = () => {
             </p>
             <p className="py-1 text-xl font-semibold">
               Minimum Order Quantity: <b>{tool?.quantity}</b> Unit
-            </p>
+            </p> */}
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
@@ -222,7 +251,7 @@ const Purchase = () => {
                     userOrderQuantity?.quantity < tool?.quantity ||
                     userOrderQuantity?.quantity > tool?.stock
                   }
-                  className="btn btn-primary"
+                  className="btn btn-success"
                   type="submit"
                   value="Place Order"
                 />
