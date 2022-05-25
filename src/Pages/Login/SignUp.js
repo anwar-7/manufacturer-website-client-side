@@ -33,7 +33,8 @@ const SignUp = () => {
 
     // have to delete after implement token
     if (user) {
-      navigate('/login');
+      console.log(user);
+      // navigate('/login');
     }
   }, [user, navigate]);
 
