@@ -9,7 +9,6 @@ import { toast } from 'react-toastify';
 const Purchase = () => {
   const [user] = useAuthState(auth);
   const { toolId } = useParams();
-  // const [tool, setTool] = useState({});
   const [userOrderQuantity, setUserOrderQuantity] = useState({});
   const {
     isLoading,
@@ -23,35 +22,10 @@ const Purchase = () => {
   useEffect(() => {
     setUserOrderQuantity(tool);
   }, [tool]);
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/tools/${toolId}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setTool(data);
-  //       setUserOrderQuantity(data);
-  //     });
-  // }, [toolId]);
 
   if (isLoading) {
     return <Loading></Loading>;
   }
-
-  // const [user, setUser] = useState({
-  //     name: 'Akbar The Great',
-  //     email: 'akbar@momo.taj',
-  //     address: 'Tajmohol Road Md.pur',
-  //     phone: '01711111111'
-  // });
-
-  // const handleAddressChange = event =>{
-  //     console.log(event.target.value);
-  //     const {address, ...rest} = user;
-  //     const newAddress = event.target.value;
-  //     const newUser = {address: newAddress, ...rest};
-  //     console.log(newUser);
-  //     setUser(newUser);
-  // }
 
   const handleChangeQuantity = (e) => {
     setUserOrderQuantity(e.target.value);
@@ -66,16 +40,16 @@ const Purchase = () => {
     const userQuantity = userOrderQuantity?.quantity;
     const toolQuantity = tool?.quantity;
     const toolStock = tool?.stock;
-    if (e.target.address.value === '') {
-      toast.error('Please provide your Address');
-      return false;
-    } else if (e.target.quantity.value === '') {
-      toast.error('Please provide your Minimum Order Quantity');
-      return false;
-    } else if (e.target.phone.value === '') {
-      toast.error('Please provide your Phone number');
-      return false;
-    }
+    // if (e.target.address.value === '') {
+    //   toast.error('Please provide your Address');
+    //   return false;
+    // } else if (e.target.quantity.value === '') {
+    //   toast.error('Please provide your Minimum Order Quantity');
+    //   return false;
+    // } else if (e.target.phone.value === '') {
+    //   toast.error('Please provide your Phone number');
+    //   return false;
+    // }
 
     // order
     const email = user?.email;
@@ -87,11 +61,8 @@ const Purchase = () => {
     const price = userOrderQuantity?.price;
     const stock = userOrderQuantity?.stock;
     const img = userOrderQuantity?.img;
-    // change
-    // const quantity = tool?.quantity;
-    // change
     const payment = false;
-    // change
+
     const orderQuantity = parseInt(e.target.quantity.value);
     const order = {
       email,
@@ -103,13 +74,10 @@ const Purchase = () => {
       price,
       stock,
       img,
-      // change
-      // quantity,
       payment,
       orderQuantity,
     };
     console.log(order);
-    // change
     fetch('http://localhost:5000/order', {
       method: 'POST', // or 'PUT'
       headers: {
@@ -183,23 +151,6 @@ const Purchase = () => {
                 </p>
               </div>
             </div>
-
-            {/* <h1 className="text-4xl font-bold text-success">Product Details</h1>
-            <p className="py-1 text-xl font-semibold">
-              Price Per Unit: $<b>{userOrderQuantity?.price}</b>
-            </p>
-            <p className="py-1 text-xl">
-              Description: {userOrderQuantity?.description?.slice(0, 150)}...
-            </p>
-            <p className="py-1 text-xl font-semibold">
-              Ratings: ({userOrderQuantity?.ratings})
-            </p>
-            <p className="py-1 text-xl font-semibold">
-              Available Quantity: <b>{userOrderQuantity?.stock}</b> Unit
-            </p>
-            <p className="py-1 text-xl font-semibold">
-              Minimum Order Quantity: <b>{tool?.quantity}</b> Unit
-            </p> */}
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
@@ -213,13 +164,13 @@ const Purchase = () => {
                   onChange={handleChangeQuantity}
                   value={userOrderQuantity?.quantity}
                   className="input input-bordered mb-3"
+                  required
                 />
                 <label className="label">
                   <span className="label-text">Available Quantity</span>
                 </label>
                 <input
                   type="text"
-                  // onChange={handleChangeAvailableQuantity}
                   name="stock"
                   value={userOrderQuantity?.stock}
                   className="input input-bordered mb-3"
@@ -234,6 +185,7 @@ const Purchase = () => {
                   name="address"
                   placeholder="Address"
                   className="input input-bordered mb-3"
+                  required
                 />
 
                 <label className="label">
@@ -244,12 +196,14 @@ const Purchase = () => {
                   name="phone"
                   placeholder="Phone"
                   className="input input-bordered mb-3"
+                  required
                 />
                 <input
                   id="placeOrder"
                   disabled={
                     userOrderQuantity?.quantity < tool?.quantity ||
-                    userOrderQuantity?.quantity > tool?.stock
+                    userOrderQuantity?.quantity > tool?.stock ||
+                    isNaN(userOrderQuantity?.quantity)
                   }
                   className="btn btn-success"
                   type="submit"
