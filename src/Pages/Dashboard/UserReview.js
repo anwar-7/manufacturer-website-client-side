@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import PageTitle from '../Shared/PageTitle';
 
 const UserReview = () => {
   const handleReviewSubmit = (e) => {
@@ -42,6 +43,7 @@ const UserReview = () => {
 
   return (
     <div className="hero min-h-screen bg-base-200">
+      <PageTitle title={'review'}></PageTitle>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold text-accent">Your Review!</h1>

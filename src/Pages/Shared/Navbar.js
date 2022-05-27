@@ -21,6 +21,9 @@ const Navbar = () => {
         <Link to="/blogs">Blogs</Link>
       </li>
       <li>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
         <Link to="/purchase">Purchase</Link>
       </li>
       <li>
@@ -48,14 +51,7 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         )}
       </li>
-      <li>
-        {user && <span>{user?.displayName}</span>}
-        {/* {user || UserCredentialImpl ? (
-          <span>{user?.displayName}</span>
-        ) : (
-          <>{UserCredentialImpl?.user?.displayName}</>
-        )} */}
-      </li>
+      <li>{user && <span>{user?.displayName}</span>}</li>
     </>
   );
   return (
