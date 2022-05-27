@@ -10,7 +10,7 @@ const Tool = ({ tool }) => {
   return (
     <div className="card card-normal lg:max-w-lg bg-base-100 shadow-xl">
       <figure>
-        <img src={img} alt="Shoes" />
+        <img className="" src={img} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">Tool: {name}</h2>
