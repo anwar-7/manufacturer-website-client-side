@@ -12,6 +12,12 @@ import UserReview from './Pages/Dashboard/UserReview';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import NotFound from './Pages/Shared/NotFound';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AllOrders from './Pages/Dashboard/AllOrders';
+import Payment from './Pages/Dashboard/Payment';
+import RequireAdmin from './Pages/Login/RequireAdmin';
+import Users from './Pages/Dashboard/Users';
 
 function App() {
   return (
@@ -23,14 +29,70 @@ function App() {
         <Route
           path="purchase/:toolId"
           element={
-            // <RequireAuth>
-            <Purchase />
-            // </RequireAuth>
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
           }
         />
         {/* change */}
-        <Route path="userReview" element={<UserReview />} />
-        <Route path="myprofile" element={<MyProfile />} />
+        {/* <Route path="userReview" element={<UserReview />} />
+        <Route path="myprofile" element={<MyProfile />} /> */}
+
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            index
+            element={
+              <RequireAuth>
+                <MyOrders />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="myprofile"
+            element={
+              <RequireAuth>
+                <MyProfile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="userReview"
+            element={
+              <RequireAuth>
+                <UserReview />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="myprofile"
+            element={
+              <RequireAuth>
+                <MyProfile />
+              </RequireAuth>
+            }
+          />
+
+          {/* <Route path="myprofile" element={<MyProfile />} /> */}
+          {/* <Route path="addareview" element={<AddAReview />} /> */}
+          <Route path="allorders" element={<AllOrders />} />
+          <Route path="payment/:id" element={<Payment />} />
+          {/* Admin Panel */}
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <Users />
+              </RequireAdmin>
+            }
+          />
+        </Route>
 
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="login" element={<Login />} />

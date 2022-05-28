@@ -3,15 +3,15 @@ import PageTitle from '../Shared/PageTitle';
 
 const Blogs = () => {
   return (
-    <div class="hero bg-base-200">
+    <div className="hero bg-base-200">
       <PageTitle title={'Blogs'}></PageTitle>
-      <div class="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:flex-row-reverse">
         <div>
-          <h1 class="text-5xl font-bold">Blogs...!</h1>
-          <h1 class="mt-10 uppercase font-semibold text-black">
+          <h1 className="text-5xl font-bold">Blogs...!</h1>
+          <h1 className="mt-10 uppercase font-semibold text-black">
             14.1: How will you improve the performance of a React Application?
           </h1>
-          <p class="py-6">
+          <p className="py-6">
             <b>Answer: </b>Performance is much more important for any
             application for making the application user friendly. Performance is
             the key for any developers. React application as a client
@@ -34,11 +34,11 @@ const Blogs = () => {
             performance of react application.
           </p>
 
-          <h1 class="mt-10 uppercase font-semibold text-black">
+          <h1 className="mt-10 uppercase font-semibold text-black">
             14.2 What are the different ways to manage a state in a React
             application?
           </h1>
-          <p class="py-6">
+          <p className="py-6">
             <b>Answer: </b>State management is one of the most important for
             react application. For instance, if page load without getting data
             or before loading spinner then the page will generate errors. There
@@ -66,10 +66,10 @@ const Blogs = () => {
             your application.
           </p>
 
-          <h1 class="mt-10 uppercase font-semibold text-black">
+          <h1 className="mt-10 uppercase font-semibold text-black">
             14.3 How does prototypical inheritance work?
           </h1>
-          <p class="py-6">
+          <p className="py-6">
             <b>Answer: </b>Prototypical inheritance is the ability of getting
             the accessibility of object properties from another object. We use a
             JavaScript prototype to add new properties and methods to an
@@ -84,12 +84,12 @@ const Blogs = () => {
             from Player.prototype.
           </p>
 
-          <h1 class="mt-10 uppercase font-semibold text-black">
+          <h1 className="mt-10 uppercase font-semibold text-black">
             14.4 Why you do not set the state directly in React. For example, if
             you have `const [products, setProducts] = useState([])`. Why you do
             not set `products = [...]` instead, you use the `setProducts
           </h1>
-          <p class="py-6">
+          <p className="py-6">
             <b>Answer: </b>There are several reasons behind for not setting
             state directly in react. Some reasons are discussed below: <br />{' '}
             (a) If we set state directly, calling the setState() afterward may
@@ -105,19 +105,19 @@ const Blogs = () => {
             setProducts not products=[...]
           </p>
 
-          <h1 class="mt-10 uppercase font-semibold text-black">
+          <h1 className="mt-10 uppercase font-semibold text-black">
             14.5 You have an array of products. Each object has a name, price,
             description, etc. How will you implement a search to find products
             by name?
           </h1>
-          <p class="py-6">
+          <p className="py-6">
             <b>Answer: </b> <br />
           </p>
 
-          <h1 class="mt-10 uppercase font-semibold text-black">
+          <h1 className="mt-10 uppercase font-semibold text-black">
             14.6 What is a unit test? Why should write unit tests?
           </h1>
-          <p class="py-6">
+          <p className="py-6">
             <b>Answer: </b>Unit testing: Unit test is the most important part
             for before delivering any software. A unit testing is a process of
             testing the smallest piece of code that can be logically isolated in

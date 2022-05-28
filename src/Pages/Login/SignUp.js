@@ -7,9 +7,9 @@ import {
 
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-// import useToken from '../../hooks/useToken';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -23,20 +23,22 @@ const SignUp = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  //   const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
   const navigate = useNavigate();
-  useEffect(() => {
-    //   if (token) {
-    //     navigate('/login');
-    //   }
+  const location = useLocation();
+  let from = location.state?.from?.pathname || '/';
+  // useEffect(() => {
+  //   if (token) {
+  //     navigate("/");
+  //   }
+  // }, [user, navigate]);
 
-    // have to delete after implement token
-    if (user) {
-      console.log(user);
-      // navigate('/login');
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [token, from, navigate]);
 
   let signInError;
 
@@ -89,7 +91,6 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Email</span>

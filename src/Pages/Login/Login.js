@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 // import useToken from '../../hooks/useToken';
 
 const Login = () => {
@@ -24,18 +25,18 @@ const Login = () => {
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-  //   const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
   let signInError;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || '/';
 
-  //   useEffect(() => {
-  //     if (token) {
-  //       navigate(from, { replace: true });
-  //     }
-  //   }, [token, from, navigate]);
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
 
   if (loading || gLoading) {
     return <Loading></Loading>;
@@ -64,6 +65,7 @@ const Login = () => {
       toast.warning('Enter your email address Please');
     }
   };
+
   return (
     <div className="flex h-screen justify-center items-center">
       <div className="card w-96 bg-base-100 shadow-xl">

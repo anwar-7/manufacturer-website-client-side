@@ -125,15 +125,15 @@ const Purchase = () => {
               User Email: {user?.email}
             </p>
 
-            <div class="collapse">
+            <div className="collapse">
               <input type="checkbox" />
-              <div class="collapse-title ">
+              <div className="collapse-title ">
                 <h1 className="text-4xl font-bold text-success">
                   Product Details{' '}
                   <span className="text-sm text-neutral">(Show/Hied)</span>
                 </h1>
               </div>
-              <div class="collapse-content">
+              <div className="collapse-content">
                 <p className="py-1 text-xl font-semibold">
                   Price Per Unit: $<b>{userOrderQuantity?.price}</b>
                 </p>
