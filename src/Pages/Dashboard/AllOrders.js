@@ -1,9 +1,11 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import AllOrder from './AllOrder';
 
 const AllOrders = () => {
+  // const [orders, setOrders] = useState([]);
   const {
     data: orders,
     isLoading,
@@ -16,6 +18,16 @@ const AllOrders = () => {
       },
     }).then((res) => res.json())
   );
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const { data } = await axios.get(`http://localhost:5000/order`);
+  //     // console.log(data);
+  //     // all products
+  //     setOrders(data);
+  //   })();
+  // }, []);
+
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -32,6 +44,7 @@ const AllOrders = () => {
               <th>Name</th>
               <th>Price</th>
               <th>Quantity</th>
+              <th>Control</th>
             </tr>
           </thead>
           <tbody>
