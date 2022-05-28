@@ -1,8 +1,10 @@
 import React from 'react';
+import PageTitle from '../Shared/PageTitle';
 
 const Portfolio = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
+      <PageTitle title={'Protfolio'}></PageTitle>
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-3xl font-bold uppercase">Md Anwarul Islam</h1>

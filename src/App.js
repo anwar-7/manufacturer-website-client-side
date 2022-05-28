@@ -10,6 +10,8 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import UserReview from './Pages/Dashboard/UserReview';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   return (
@@ -28,9 +30,12 @@ function App() {
         />
         {/* change */}
         <Route path="userReview" element={<UserReview />} />
+        <Route path="myprofile" element={<MyProfile />} />
+
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </div>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Navbar = () => {
-  const [user, UserCredentialImpl] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const logout = () => {
     signOut(auth);
@@ -27,10 +27,7 @@ const Navbar = () => {
         <Link to="/purchase">Purchase</Link>
       </li>
       <li>
-        <Link to="/contact">Contact</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
+        <Link to="/myprofile">My Profile</Link>
       </li>
       {user && (
         <>

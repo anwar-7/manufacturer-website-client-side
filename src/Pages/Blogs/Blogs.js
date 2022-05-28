@@ -4,6 +4,7 @@ import PageTitle from '../Shared/PageTitle';
 const Blogs = () => {
   return (
     <div class="hero bg-base-200">
+      <PageTitle title={'Blogs'}></PageTitle>
       <div class="hero-content flex-col lg:flex-row-reverse">
         <div>
           <h1 class="text-5xl font-bold">Blogs...!</h1>
