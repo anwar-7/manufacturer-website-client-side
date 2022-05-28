@@ -11,7 +11,7 @@ const AllOrders = () => {
     isLoading,
     refetch,
   } = useQuery('orders', () =>
-    fetch('http://localhost:5000/order', {
+    fetch('https://ztools-a12.herokuapp.com/order', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -21,7 +21,7 @@ const AllOrders = () => {
 
   // useEffect(() => {
   //   (async () => {
-  //     const { data } = await axios.get(`http://localhost:5000/order`);
+  //     const { data } = await axios.get(`https://ztools-a12.herokuapp.com/order`);
   //     // console.log(data);
   //     // all products
   //     setOrders(data);

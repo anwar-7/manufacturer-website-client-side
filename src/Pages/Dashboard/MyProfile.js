@@ -15,7 +15,7 @@ const MyProfile = () => {
     data: info,
     refetch,
   } = useQuery('info', () =>
-    fetch(`http://localhost:5000/userinfo`).then((res) => res.json())
+    fetch(`https://ztools-a12.herokuapp.com/userinfo`).then((res) => res.json())
   );
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const MyProfile = () => {
     console.log(updateUser);
 
     // setUserInfo(updateUser);
-    fetch('http://localhost:5000/userinfo', {
+    fetch('https://ztools-a12.herokuapp.com/userinfo', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ const UserReview = () => {
       email,
     };
     console.log(review);
-    fetch('http://localhost:5000/reviews', {
+    fetch('https://ztools-a12.herokuapp.com/reviews', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',

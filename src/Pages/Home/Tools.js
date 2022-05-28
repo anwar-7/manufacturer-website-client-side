@@ -9,7 +9,7 @@ const Tools = () => {
     error,
     data: tools,
   } = useQuery('tools', () =>
-    fetch('http://localhost:5000/tools').then((res) => res.json())
+    fetch('https://ztools-a12.herokuapp.com/tools').then((res) => res.json())
   );
 
   if (isLoading) {

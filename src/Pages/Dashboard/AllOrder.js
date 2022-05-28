@@ -6,7 +6,7 @@ const AllOrder = ({ order }) => {
   //     const proceed = window.confirm('Are you sure you want to delete?');
   //     if (proceed) {
   //       console.log('Deleting Product', id);
-  //       const url = `http://localhost:5000/order/${id}`;
+  //       const url = `https://ztools-a12.herokuapp.com/order/${id}`;
   //       fetch(url, {
   //         method: 'DELETE',
   //       }).then((res) =>

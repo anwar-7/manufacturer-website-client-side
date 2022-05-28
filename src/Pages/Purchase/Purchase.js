@@ -16,7 +16,9 @@ const Purchase = () => {
     data: tool,
     refetch,
   } = useQuery(['tool', toolId], () =>
-    fetch(`http://localhost:5000/tools/${toolId}`).then((res) => res.json())
+    fetch(`https://ztools-a12.herokuapp.com/tools/${toolId}`).then((res) =>
+      res.json()
+    )
   );
 
   useEffect(() => {
@@ -78,7 +80,7 @@ const Purchase = () => {
       orderQuantity,
     };
     console.log(order);
-    fetch('http://localhost:5000/order', {
+    fetch('https://ztools-a12.herokuapp.com/order', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
