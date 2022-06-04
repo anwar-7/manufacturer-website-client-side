@@ -1,32 +1,21 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import AllOrder from './AllOrder';
 
 const AllOrders = () => {
-  // const [orders, setOrders] = useState([]);
   const {
     data: orders,
     isLoading,
     refetch,
   } = useQuery('orders', () =>
-    fetch('https://ztools-a12.herokuapp.com/order', {
+    fetch('https://ztools-a12.herokuapp.com/allorder', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,
       },
     }).then((res) => res.json())
   );
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const { data } = await axios.get(`https://ztools-a12.herokuapp.com/order`);
-  //     // console.log(data);
-  //     // all products
-  //     setOrders(data);
-  //   })();
-  // }, []);
 
   if (isLoading) {
     return <Loading></Loading>;

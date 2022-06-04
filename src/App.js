@@ -81,7 +81,14 @@ function App() {
 
           {/* <Route path="myprofile" element={<MyProfile />} /> */}
           {/* <Route path="addareview" element={<AddAReview />} /> */}
-          <Route path="allorders" element={<AllOrders />} />
+          <Route
+            path="allorders"
+            element={
+              <RequireAdmin>
+                <AllOrders />
+              </RequireAdmin>
+            }
+          />
           <Route path="payment/:id" element={<Payment />} />
           {/* Admin Panel */}
           <Route
